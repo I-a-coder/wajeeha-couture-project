@@ -1,0 +1,332 @@
+{
+  "collections": [
+    {
+      "name": "Aghaz",
+      "title": "Aghaz",
+      "products": [
+        {
+          "id": "0001",
+          "collection": "Aghaz",
+          "discount": 10,
+          "title": "Skin Coord",
+          "unstichedPrice": 2500,
+          "stichedPrice": 4499,
+          "image": "/Aghaz/0003.jpeg",
+          "quantity": 0,
+          "available": true
+        },
+        {
+          "id": "0004",
+          "collection": "Aghaz",
+          "discount": 10,
+          "title": "Orange Coord",
+          "unstichedPrice": 2500,
+          "stichedPrice": 4499,
+          "image": "/Aghaz/0005.jpeg",
+          "quantity": 1,
+          "available": true
+        },
+        {
+          "id": "0007",
+          "collection": "Aghaz",
+          "discount": 10,
+          "title": "Feroza",
+          "unstichedPrice": 4500,
+          "stichedPrice": 7000,
+          "image": "/Aghaz/0007.jpeg",
+          "quantity": 5,
+          "available": true
+        },
+        {
+          "id": "0011",
+          "collection": "Aghaz",
+          "discount": 10,
+          "title": "Kamri",
+          "unstichedPrice": 4500,
+          "stichedPrice": 7000,
+          "image": "/Aghaz/0011.jpg",
+          "quantity": 5,
+          "available": true
+        },
+        {
+          "id": "0016",
+          "collection": "Aghaz",
+          "discount": 10,
+          "title": "Heer",
+          "unstichedPrice": 4500,
+          "stichedPrice": 7300,
+          "image": "/Aghaz/0017.jpg",
+          "quantity": 2,
+          "available": true
+        },
+        {
+          "id": "0021",
+          "collection": "Aghaz",
+          "discount": 10,
+          "title": "Pakeeza",
+          "unstichedPrice": 4500,
+          "stichedPrice": 6899,
+          "image": "/Aghaz/0021.jpg",
+          "quantity": 1,
+          "available": true
+        }
+      ]
+    },
+    {
+      "name": "Barsat",
+      "title": "Barsat",
+      "products": [
+        {
+          "id": "0001",
+          "title": "Mehar",
+          "discount": 10,
+          "collection": "Barsat",
+          "stichedPrice": 7300,
+          "image": "/Barsat/0001.jpeg",
+          "quantity": 4,
+          "available": true
+        },
+        {
+          "id": "0006",
+          "title": "Soraj Mukhi",
+          "discount": 10,
+          "collection": "Barsat",
+          "stichedPrice": 7300,
+          "image": "/Barsat/0006.jpeg",
+          "quantity": 4,
+          "available": true
+        },
+        {
+          "id": "0011",
+          "title": "Shehnai",
+          "discount": 10,
+          "collection": "Barsat",
+          "stichedPrice": 7500,
+          "image": "/Barsat/0011.jpg",
+          "quantity": 4,
+          "available": true
+        },
+        {
+          "id": "0016",
+          "title": "Barkha",
+          "discount": 10,
+          "collection": "Barsat",
+          "stichedPrice": 7300,
+          "image": "/Barsat/0017.jpg",
+          "quantity": 4,
+          "available": true
+        },
+        {
+          "id": "0021",
+          "title": "Marjaan",
+          "discount": 10,
+          "collection": "Barsat",
+          "stichedPrice": 7500,
+          "image": "/Barsat/0021.jpg",
+          "quantity": 4,
+          "available": true
+        },
+        {
+          "id": "0026",
+          "title": "Badal",
+          "discount": 10,
+          "collection": "Barsat",
+          "stichedPrice": 7300,
+          "image": "/Barsat/0027.jpg",
+          "quantity": 2,
+          "available": true
+        },
+        {
+          "id": "0031",
+          "title": "Raya",
+          "discount": 10,
+          "collection": "Barsat",
+          "stichedPrice": 7300,
+          "image": "/Barsat/0033.jpg",
+          "quantity": 5,
+          "available": true
+        },
+        {
+          "id": "0036",
+          "title": "Chandni Raat",
+          "discount": 10,
+          "collection": "Barsat",
+          "stichedPrice": 7000,
+          "image": "/Barsat/0038.jpg",
+          "quantity": 4,
+          "available": true
+        }
+      ]
+    },
+    {
+      "name": "Kehkasha",
+      "title": "Kehkasha",
+      "products": [
+        {
+          "id": "0001",
+          "title": "Sarso",
+          "discount": 10,
+          "collection": "Kehkasha",
+          "unstichedPrice": 6499,
+          "stichedPrice": 11999,
+          "image": "/Kehkasha/0001.jpg",
+          "quantity": 2,
+          "available": true
+        },
+        {
+          "id": "0008",
+          "title": "Khwab",
+          "discount": 10,
+          "collection": "Kehkasha",
+          "unstichedPrice": 6499,
+          "stichedPrice": 11999,
+          "image": "/Kehkasha/0008.jpg",
+          "quantity": 3,
+          "available": true
+        },
+        {
+          "id": "0011",
+          "title": "Surkhi",
+          "discount": 10,
+          "collection": "Kehkasha",
+          "unstichedPrice": 6499,
+          "stichedPrice": 11999,
+          "image": "/Kehkasha/0016.jpg",
+          "quantity": 3,
+          "available": true
+        },
+        {
+          "id": "0017",
+          "title": "Surmaii",
+          "discount": 10,
+          "collection": "Kehkasha",
+          "unstichedPrice": 8499,
+          "stichedPrice": 12999,
+          "image": "/Kehkasha/0019.jpg",
+          "quantity": 3,
+          "available": true
+        },
+        {
+          "id": "0020",
+          "title": "Naranji",
+          "discount": 10,
+          "collection": "Kehkasha",
+          "unstichedPrice": 6499,
+          "stichedPrice": 11999,
+          "image": "/Kehkasha/0021.jpg",
+          "quantity": 3,
+          "available": true
+        },
+        {
+          "id": "0022",
+          "title": "Zincara",
+          "discount": 10,
+          "collection": "Kehkasha",
+          "unstichedPrice": 6499,
+          "stichedPrice": 11999,
+          "image": "/Kehkasha/0022.jpg",
+          "quantity": 3,
+          "available": true
+        }
+      ]
+    },
+    {
+      "name": "Wedding",
+      "title": "Wedding Formals",
+      "products": [
+        {
+          "id": "0001",
+          "title": "Motia",
+          "collection": "Wedding",
+          "unstichedPrice": 12999,
+          "stichedPrice": 18999,
+          "image": "/WeddingFormals/0003.jpg",
+          "available": true
+        },
+        {
+          "id": "0007",
+          "title": "Chambeli",
+          "collection": "Wedding",
+          "unstichedPrice": 12999,
+          "stichedPrice": 18999,
+          "image": "/WeddingFormals/0008.jpg",
+          "available": true
+        },
+        {
+          "id": "0011",
+          "title": "Sunari",
+          "collection": "Wedding",
+          "unstichedPrice": 12999,
+          "stichedPrice": 19999,
+          "image": "/WeddingFormals/0013.jpg",
+          "available": true
+        },
+        {
+          "id": "0015",
+          "title": "Mehak",
+          "collection": "Wedding",
+          "unstichedPrice": 12999,
+          "stichedPrice": 18999,
+          "image": "/WeddingFormals/0018.jpg",
+          "quantity": 3,
+          "available": true
+        },
+        {
+          "id": "0019",
+          "title": "Gulab",
+          "collection": "Wedding",
+          "unstichedPrice": 12999,
+          "stichedPrice": 18999,
+          "image": "/WeddingFormals/0022.jpg",
+          "available": true
+        }
+      ]
+    },
+    {
+      "name": "Winter",
+      "title": "Winter Volume-1",
+      "products": [
+        {
+          "id": "0001",
+          "title": "Tulip",
+          "collection": "WinterV1",
+          "unstichedPrice": 2499,
+          "stichedPrice": 4499,
+          "image": "/WinterV1/0001.jpg",
+          "quantity": 1,
+          "available": true
+        },
+        {
+          "id": "0004",
+          "title": "Autumn",
+          "collection": "WinterV1",
+          "unstichedPrice": 2499,
+          "stichedPrice": 4499,
+          "image": "/WinterV1/0005.jpg",
+          "quantity": 2,
+          "available": true
+        },
+        {
+          "id": "0007",
+          "title": "Sun Flower",
+          "collection": "WinterV1",
+          "unstichedPrice": 2499,
+          "stichedPrice": 4499,
+          "image": "/WinterV1/0008.jpg",
+          "quantity": 1,
+          "available": true
+        },
+        {
+          "id": "0010",
+          "title": "Spring",
+          "collection": "WinterV1",
+          "unstichedPrice": 2499,
+          "stichedPrice": 4499,
+          "image": "/WinterV1/0012.jpg",
+          "quantity": 3,
+          "available": true
+        }
+      ]
+    }
+  ]
+}

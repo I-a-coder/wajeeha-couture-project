@@ -1,0 +1,49 @@
+{
+  "title": "New Arrivals",
+  "products": [
+    {
+      "id": "0001",
+      "title": "Tulip",
+      "collection": "WinterV1",
+      "unstichedPrice": 2499,
+      "stichedPrice": 4499,
+      "image": "/WinterV1/0001.jpg",
+      "collectionName": "Winter V1",
+      "quantity": 1,
+      "available": true
+    },
+    {
+      "id": "0004",
+      "title": "Autumn",
+      "collection": "WinterV1",
+      "unstichedPrice": 2499,
+      "stichedPrice": 4499,
+      "image": "/WinterV1/0005.jpg",
+      "collectionName": "Winter V1",
+      "quantity": 2,
+      "available": true
+    },
+    {
+      "id": "0007",
+      "title": "Sun Flower",
+      "collection": "WinterV1",
+      "unstichedPrice": 2499,
+      "stichedPrice": 4499,
+      "image": "/WinterV1/0008.jpg",
+      "collectionName": "Winter V1",
+      "quantity": 1,
+      "available": true
+    },
+    {
+      "id": "0010",
+      "title": "Spring",
+      "collection": "WinterV1",
+      "unstichedPrice": 2499,
+      "stichedPrice": 4499,
+      "image": "/WinterV1/0012.jpg",
+      "collectionName": "Winter V1",
+      "quantity": 3,
+      "available": true
+    }
+  ]
+}

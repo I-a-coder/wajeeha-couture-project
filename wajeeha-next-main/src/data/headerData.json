@@ -1,0 +1,31 @@
+{
+  "logo": "/assets/Logo.svg",
+  "title": "adil",
+  "notifications": [
+    { "message": "Step into winter with our new Winter Vol-1 collection." },
+    { "message": "New arrivals: Check out our latest styles." },
+    { "message": "Limited time offer: 10% off on AGHAZ, BARSAT & KEHKSHA!" }
+  ],
+  "navigation": [
+    {
+      "label": "HOME",
+      "link": "/"
+    },
+    {
+      "label": "NEW ARRIVALS",
+      "link": "/new-arrivals"
+    },
+    {
+      "label": "COLLECTIONS",
+      "link": "/collections"
+    },
+    {
+      "label": "CLEARANCE SALE",
+      "link": "/clearance-sale"
+    },
+    {
+      "label": "OUR JOURNEY",
+      "link": "/our-journey"
+    }
+  ]
+}

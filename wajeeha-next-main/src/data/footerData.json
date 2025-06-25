@@ -1,0 +1,76 @@
+{
+  "title": "Contact Us",
+  "sections": [
+    {
+      "type": "getInTouch",
+      "content": {
+        "title": "Get In Touch",
+        "items": [
+          {
+            "type": "phone",
+            "value": "+92 302 0010434",
+            "href": "tel:+923020010434"
+          },
+          {
+            "type": "email",
+            "value": "wajeehahashmi1995@gmail.com ",
+            "href": "mailto:wajeehahashmi1995@gmail.com"
+          },
+          {
+            "type": "instagram",
+            "value": "instagram.com/wajeehahashmi_couture",
+            "href": "https://instagram.com/wajeehahashmi_couture"
+          },
+          {
+            "type": "facebook",
+            "value": "facebook.com/wajeehahashmicouture",
+            "href": "https://facebook.com/wajeehahashmicouture"
+          }
+        ]
+      }
+    },
+    {
+      "type": "information",
+      "content": {
+        "title": "Information",
+        "items": [
+          {
+            "type": "about",
+            "value": "Our Journey",
+            "href": "/our-journey"
+          },
+          {
+            "type": "sizeGuide",
+            "value": "Size Guide",
+            "href": "/size-guide"
+          }
+        ]
+      }
+    },
+    {
+      "type": "customerServices",
+      "content": {
+        "title": "Customer Services",
+        "items": [
+          {
+            "type": "faqs",
+            "value": "FAQs",
+            "href": "/faqs"
+          },
+          {
+            "type": "contactUs",
+            "value": "Contact Us",
+            "href": "/contact"
+          }
+        ]
+      }
+    },
+    {
+      "type": "newsletterSignup",
+      "content": {
+        "title": "Newsletter Signup",
+        "description": "Subscribe to our newsletter and get latest updates."
+      }
+    }
+  ]
+}

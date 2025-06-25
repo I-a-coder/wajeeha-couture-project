@@ -1,0 +1,15 @@
+{
+  "title": "RETURN & EXCHANGE",
+  "sections": [
+    {
+      "title": "Section 1: Return and Exchange Policy",
+      "content": "We strive to provide a smooth return and exchange process for our customers. Items can be returned within 3 days of delivery. Products must be unused and in their original condition. Please note that custom or sale items are non-returnable. Customers are responsible for return delivery costs for exchanges or returns. All returns will be inspected upon arrival. If the returned items are found to be used, washed, or not in original condition, we will not accept the return.",
+      "highlightedContent": "**Custom or sale items are non-returnable.**\n**Returns must be initiated within 3 days of delivery.**"
+    },
+    {
+      "title": "Section 2: Refund Policy",
+      "content": "Currently, we do not offer refunds for cash on delivery (COD) orders.",
+      "highlightedContent": "**Refunds are not applicable to COD orders.**"
+    }
+  ]
+}

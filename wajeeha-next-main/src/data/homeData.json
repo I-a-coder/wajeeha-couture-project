@@ -1,0 +1,216 @@
+{
+  "title": "Homepage",
+  "sections": [
+    {
+      "type": "newArrivals",
+      "title": "NEW ARRIVALS",
+      "items": [
+        {
+          "id": "0001",
+          "collection": "WinterV1",
+          "title": "Tulip",
+          "unstichedPrice": 2499,
+          "stichedPrice": 4499,
+          "image": "/WinterV1/0001.jpg",
+          "quantity": 1,
+          "available": true
+        },
+        {
+          "id": "0004",
+          "collection": "WinterV1",
+          "title": "Autumn",
+          "unstichedPrice": 2499,
+          "stichedPrice": 4499,
+          "image": "/WinterV1/0005.jpg",
+          "quantity": 2,
+          "available": true
+        },
+        {
+          "id": "0007",
+          "title": "Sun Flower",
+          "collection": "WinterV1",
+          "unstichedPrice": 2499,
+          "stichedPrice": 4499,
+          "image": "/WinterV1/0008.jpg",
+          "quantity": 1,
+          "available": true
+        },
+        {
+          "id": "0010",
+          "title": "Spring",
+          "collection": "WinterV1",
+          "unstichedPrice": 2499,
+          "stichedPrice": 4499,
+          "image": "/WinterV1/0012.jpg",
+          "quantity": 3,
+          "available": true
+        }
+      ]
+    },
+    {
+      "type": "shopByCollection",
+      "title": "SHOP BY COLLECTION",
+      "items": [
+        {
+          "title": "AGHAZ",
+          "image": "/Aghaz/0007.jpeg",
+          "path": "aghaz"
+        },
+        {
+          "title": "BARSAT",
+          "image": "/Barsat/0021.jpg",
+          "path": "Barsat"
+        },
+        {
+          "title": "KEHKASHA",
+          "image": "/Kehkasha/0016.jpg",
+          "path": "kehkasha"
+        },
+        {
+          "title": "WEDDING",
+          "image": "/WeddingFormals/0018.jpg",
+          "path": "wedding"
+        },
+        {
+          "title": "WINTER",
+          "image": "/WinterV1/0004.jpg",
+          "path": "winter"
+        }
+      ]
+    },
+    {
+      "type": "barsatCollection",
+      "title": "BARSAT COLLECTION",
+      "items": [
+        {
+          "id": "0001",
+          "title": "Mehar",
+          "collection": "Barsat",
+          "discount": 10,
+          "stichedPrice": 7300,
+          "image": "/Barsat/0001.jpeg",
+          "quantity": 4,
+          "available": true
+        },
+        {
+          "id": "0006",
+          "title": "Soraj Mukhi",
+          "collection": "Barsat",
+          "discount": 10,
+          "stichedPrice": 7300,
+          "image": "/Barsat/0006.jpeg",
+          "quantity": 4,
+          "available": true
+        },
+        {
+          "id": "0011",
+          "title": "Shehnai",
+          "collection": "Barsat",
+          "discount": 10,
+          "stichedPrice": 7500,
+          "image": "/Barsat/0011.jpg",
+          "quantity": 4,
+          "available": true
+        },
+        {
+          "id": "0016",
+          "title": "Barkha",
+          "collection": "Barsat",
+          "discount": 10,
+          "stichedPrice": 7300,
+          "image": "/Barsat/0017.jpg",
+          "quantity": 4,
+          "available": true
+        },
+        {
+          "id": "0021",
+          "title": "Marjaan",
+          "collection": "Barsat",
+          "discount": 10,
+          "stichedPrice": 7500,
+          "image": "/Barsat/0021.jpg",
+          "quantity": 4,
+          "available": true
+        },
+        {
+          "id": "0026",
+          "title": "Badal",
+          "collection": "Barsat",
+          "discount": 10,
+          "stichedPrice": 7300,
+          "image": "/Barsat/0027.jpg",
+          "quantity": 2,
+          "available": true
+        },
+        {
+          "id": "0031",
+          "title": "Raya",
+          "collection": "Barsat",
+          "discount": 10,
+          "stichedPrice": 7300,
+          "image": "/Barsat/0033.jpg",
+          "quantity": 5,
+          "available": true
+        },
+        {
+          "id": "0036",
+          "title": "Chandni Raat",
+          "collection": "Barsat",
+          "discount": 10,
+          "stichedPrice": 7000,
+          "image": "/Barsat/0038.jpg",
+          "quantity": 4,
+          "available": true
+        }
+      ]
+    },
+    {
+      "type": "spotlightSelections",
+      "title": "SPOTLIGHT SELECTIONS",
+      "items": [
+        {
+          "id": "0011",
+          "title": "Kamri",
+          "discount": 10,
+          "unstichedPrice": 4500,
+          "stichedPrice": 7000,
+          "collection": "Aghaz",
+          "image": "/Aghaz/0015.jpg",
+          "quantity": 4,
+          "available": true
+        },
+        {
+          "id": "0016",
+          "title": "Barkha",
+          "discount": 10,
+          "collection": "Barsat",
+          "stichedPrice": 7300,
+          "image": "/Barsat/0016.jpg",
+          "quantity": 4,
+          "available": true
+        },
+        {
+          "id": "0011",
+          "title": "Surkhi",
+          "discount": 10,
+          "collection": "Kehkasha",
+          "stichedPrice": 6499,
+          "unstichedPrice": 11999,
+          "image": "/Kehkasha/0016.jpg",
+          "quantity": 3,
+          "available": true
+        },
+        {
+          "id": "0021",
+          "title": "Marjan",
+          "discount": 10,
+          "stichedPrice": 7500,
+          "collection": "Barsat",
+          "image": "/Barsat/0025.jpg",
+          "quantity": 4,
+          "available": true
+        }
+      ]
+    }
+  ]
+}

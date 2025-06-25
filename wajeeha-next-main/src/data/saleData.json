@@ -1,0 +1,217 @@
+{
+  "title": "CLEARANCE SALE",
+  "products": [
+    {
+      "id": "0001",
+      "title": "Skin Coord",
+      "discount": 10,
+      "collection": "Aghaz",
+      "unstichedPrice": 2500,
+      "stichedPrice": 4499,
+      "image": "/Aghaz/0003.jpeg",
+      "quantity": 0,
+      "available": true
+    },
+    {
+      "id": "0004",
+      "title": "Orange Coord",
+      "discount": 10,
+      "collection": "Aghaz",
+      "unstichedPrice": 2500,
+      "stichedPrice": 4499,
+      "image": "/Aghaz/0005.jpeg",
+      "quantity": 1,
+      "available": true
+    },
+    {
+      "id": "0007",
+      "title": "Feroza",
+      "discount": 10,
+      "collection": "Aghaz",
+      "unstichedPrice": 4500,
+      "stichedPrice": 7000,
+      "image": "/Aghaz/0007.jpeg",
+      "quantity": 5,
+      "available": true
+    },
+    {
+      "id": "0011",
+      "title": "Kamri",
+      "discount": 10,
+      "collection": "Aghaz",
+      "unstichedPrice": 4500,
+      "stichedPrice": 7000,
+      "image": "/Aghaz/0011.jpg",
+      "quantity": 5,
+      "available": true
+    },
+    {
+      "id": "0016",
+      "title": "Heer",
+      "discount": 10,
+      "collection": "Aghaz",
+      "unstichedPrice": 4500,
+      "stichedPrice": 7300,
+      "image": "/Aghaz/0017.jpg",
+      "quantity": 2,
+      "available": true
+    },
+    {
+      "id": "0021",
+      "title": "Pakeeza",
+      "discount": 10,
+      "collection": "Aghaz",
+      "unstichedPrice": 4500,
+      "stichedPrice": 6899,
+      "image": "/Aghaz/0021.jpg",
+      "quantity": 1,
+      "available": true
+    },
+    {
+      "id":"0001",
+      "title": "Mehar",
+      "discount": 10,
+      "collection": "Barsat",
+      "stichedPrice": 7300,
+      "image": "/Barsat/0001.jpeg",
+      "quantity": 4,
+      "available": true
+    },
+    {
+      "id":"0006",
+      "title": "Soraj Mukhi",
+      "discount": 10,
+      "collection": "Barsat",
+      "stichedPrice": 7300,
+      "image": "/Barsat/0006.jpeg",
+      "quantity": 4,
+      "available": true
+    },
+    {
+      "id":"0011",
+      "title": "Shehnai",
+      "discount": 10,
+      "collection": "Barsat",
+      "stichedPrice": 7500,
+      "image": "/Barsat/0011.jpg",
+      "quantity": 4,
+      "available": true
+    },
+    {
+      "id": "0016",
+      "title": "Barkha",
+      "discount": 10,
+      "collection": "Barsat",
+      "stichedPrice": 7300,
+      "image": "/Barsat/0017.jpg",
+      "quantity": 4,
+      "available": true
+    },
+    {
+      "id": "0021",
+      "title": "Marjaan",
+      "discount": 10,
+      "collection": "Barsat",
+      "stichedPrice": 7500,
+      "image": "/Barsat/0021.jpg",
+      "quantity": 4,
+      "available": true
+    },
+    {
+      "id": "0026",
+      "title": "Badal",
+      "discount": 10,
+      "collection": "Barsat",
+      "stichedPrice": 7300,
+      "image": "/Barsat/0027.jpg",
+      "quantity": 2,
+      "available": true
+    },
+    {
+      "id": "0031",
+      "title": "Raya",
+      "discount": 10,
+      "collection": "Barsat",
+      "stichedPrice": 7300,
+      "image": "/Barsat/0033.jpg",
+      "quantity": 5,
+      "available": true
+    },
+    {
+      "id": "0036",
+      "title": "Chandni Raat",
+      "discount": 10,
+      "collection": "Barsat",
+      "stichedPrice": 7000,
+      "image": "/Barsat/0038.jpg",
+      "quantity": 4,
+      "available": true
+    },
+    {
+      "id": "0001",
+      "title": "Sarso",
+      "discount": 10,
+      "collection": "Kehkasha",
+      "unstichedPrice": 6499,
+      "stichedPrice": 11999,
+      "image": "/Kehkasha/0001.jpg",
+      "quantity": 2,
+      "available": true
+    },
+    {
+      "id": "0008",
+      "title": "Khwab",
+      "discount": 10,
+      "collection": "Kehkasha",
+      "unstichedPrice": 6499,
+      "stichedPrice": 11999,
+      "image": "/Kehkasha/0008.jpg",
+      "quantity": 3,
+      "available": true
+    },
+    {
+      "id": "0011",
+      "title": "Surkhi",
+      "discount": 10,
+      "collection": "Kehkasha",
+      "unstichedPrice": 6499,
+      "stichedPrice": 11999,
+      "image": "/Kehkasha/0016.jpg",
+      "quantity": 3,
+      "available": true
+    },
+    {
+      "id": "0017",
+      "title": "Surmaii",
+      "discount": 10,
+      "collection": "Kehkasha",
+      "unstichedPrice": 8499,
+      "stichedPrice": 12999,
+      "image": "/Kehkasha/0019.jpg",
+      "quantity": 3,
+      "available": true
+    },
+    {
+      "id": "0020",
+      "title": "Naranji",
+      "discount": 10,
+      "collection": "Kehkasha",
+      "unstichedPrice": 6499,
+      "stichedPrice": 11999,
+      "image": "/Kehkasha/0021.jpg",
+      "quantity": 3,
+      "available": true
+    },
+    {
+      "id": "0022",
+      "title": "Zincara",
+      "discount": 10,
+      "collection": "Kehkasha",
+      "unstichedPrice": 6499,
+      "stichedPrice": 11999,
+      "image": "/Kehkasha/0022.jpg",
+      "quantity": 3,
+      "available": true
+    }
+  ]
+}

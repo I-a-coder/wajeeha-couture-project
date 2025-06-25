@@ -1,0 +1,55 @@
+{
+  "title": "Size Guide",
+  "image": "/assets/sizeguide.jpg",
+  "heading": "Measuring Guidelines",
+  "sections": [
+    {
+      "title": "How to measure?",
+      "content": "Stand upright and look straight ahead when measuring your body."
+    },
+    {
+      "title": "Shoulder",
+      "content": "Measurement taken on the back of the body with measuring tape from one shoulder bone to other."
+    },
+    {
+      "title": "Bust",
+      "content": "Measure around under your arm at the fullest part of your bust. Keep tape parallel to shoulder blades."
+    },
+    {
+      "title": "Waist",
+      "content": "Measure around the narrowest part of your waist. Just above the navel and below the rib cage."
+    },
+    {
+      "title": "Hips",
+      "content": "Measure around the widest part of your hips. This is about 20cm below your waist."
+    },
+    {
+      "title": "Neck width",
+      "content": "Measurement taken in a straight line from the center front till your desired width."
+    },
+    {
+      "title": "Sleeve length",
+      "content": "Measurement taken from the shoulder tip by placing tape towards tips."
+    },
+    {
+      "title": "Sleeve opening",
+      "content": "Measurement across wrist at the bottom of the sleeve."
+    },
+    {
+      "title": "Length",
+      "content": "Measure vertically from top of the shoulder till your required length."
+    },
+    {
+      "title": "Ankle length",
+      "content": "In bare foot take the measurement from shoulder top till ankle."
+    },
+    {
+      "title": "Floor level",
+      "content": "In bare foot take measurement from shoulder top till floor. Considered as full length without heels."
+    },
+    {
+      "title": "Trouser waist",
+      "content": "Measurement taken below your natural waist. The waistband will rest at about 2 inches below your navel."
+    }
+  ]
+}
