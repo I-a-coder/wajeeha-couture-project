@@ -1,0 +1,28 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Default rule - deny access unless granted below
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+    
+    // Allow users to upload payment receipts to their own folder
+    match /payments/{userId}/{fileName} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if request.auth != null && request.auth.uid == userId
+                  && request.resource.size < 5 * 1024 * 1024
+                  && request.resource.contentType.matches('image/.*');
+    }
+    
+    // Allow public read access to product images
+    match /products/{fileName} {
+      allow read: if true;
+    }
+    
+    // Allow public read access to collection images
+    match /collections/{fileName} {
+      allow read: if true;
+    }
+  }
+} 

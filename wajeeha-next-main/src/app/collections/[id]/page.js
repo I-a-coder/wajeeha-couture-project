@@ -118,6 +118,20 @@ export default function Collection() {
                     <h5 className="font-medium text-lg text-pink-600">
                       {item.title}
                     </h5>
+                    
+                    {/* Stock Status Indicator */}
+                    <div className="mb-2">
+                      {item.available === true ? (
+                        <span className="inline-block px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded">
+                          In Stock
+                        </span>
+                      ) : (
+                        <span className="inline-block px-2 py-1 text-xs font-medium bg-red-100 text-red-800 rounded">
+                          Out of Stock
+                        </span>
+                      )}
+                    </div>
+                    
                     {item.discount ? (
                       <div>
                         {/* Original price with strikethrough in red */}
