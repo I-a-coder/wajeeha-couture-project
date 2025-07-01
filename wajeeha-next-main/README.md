@@ -56,11 +56,11 @@ A modern e-commerce platform for Wajeeha Couture, built with Next.js, Firebase, 
    ```
 
 4. Run the development server:
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
+```bash
+npm run dev
+# or
+yarn dev
+```
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 

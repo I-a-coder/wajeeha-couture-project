@@ -55,7 +55,7 @@ export default function Home() {
       <div className="relative overflow-hidden">
         <div className="w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
           <div className="absolute inset-0 transform hover:scale-105 transition-transform duration-3000 ease-out">
-            <Image
+          <Image
               src="/assets/display.png"
               alt="Hero Banner"
               className="w-full h-full object-cover"
@@ -88,11 +88,11 @@ export default function Home() {
               <div key={collection.id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-xl transition-all duration-500 border border-gray-100 group">
                 <Link href={`/collections/${collection.id}`} className="block h-full">
                   <div className="relative h-80 overflow-hidden">
-                    <Image
+          <Image
                       src={collection.image?.startsWith("http") ? collection.image : "/assets/banner-default.jpg"}
                       alt={collection.title || "Collection image"}
                       className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
-                      width={400}
+            width={400}
                       height={300}
                     />
                     {collection.featured && (
@@ -153,11 +153,11 @@ export default function Home() {
               <div key={collection.id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-xl transition-all duration-500 border border-gray-100 group">
                 <Link href={`/collections/${collection.id}`} className="block h-full">
                   <div className="relative h-80 overflow-hidden">
-                    <Image
+          <Image
                       src={collection.image?.startsWith("http") ? collection.image : "https://static.wajeehacouture.com/assets" + collection.image}
                       alt={collection.title || "Collection image"}
                       className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
-                      width={400}
+            width={400}
                       height={300}
                     />
                     <div className="absolute top-0 right-0 bg-pink-600 text-white py-1 px-3 m-3 rounded-md transform rotate-0 group-hover:rotate-3 transition-transform duration-300">
@@ -186,7 +186,7 @@ export default function Home() {
                 <p className="text-gray-500">Sale items coming soon...</p>
               </div>
             )}
-          </div>
+        </div>
         </div>
       </section>
 
@@ -195,17 +195,17 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-serif text-center mb-12 relative">
             <span className="relative z-10 inline-block after:content-[''] after:absolute after:bottom-[-8px] after:left-0 after:w-full after:h-1 after:bg-pink-600 after:transform after:scale-x-0 after:hover:scale-x-100 after:transition-transform after:duration-300">New Arrivals</span>
-          </h2>
+            </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {data && data[0]?.sections?.find(s => s.type === "newArrivals")?.items ? 
               data[0].sections.find(s => s.type === "newArrivals").items.slice(0, 8).map((item, index) => (
-                <Link
-                  href={`/${item.collection}/${item.id}`}
+                  <Link
+                    href={`/${item.collection}/${item.id}`}
                   className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-xl transition-all duration-500 border border-gray-100 group"
-                  key={index}
-                >
+                    key={index}
+                  >
                   <div className="h-64 overflow-hidden relative">
-                    <Image
+                      <Image
                       src={item.image?.startsWith("http") ? item.image : "https://static.wajeehacouture.com/assets" + item.image}
                       alt={item.title || "Product image"}
                       className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
@@ -230,9 +230,9 @@ export default function Home() {
                       )}
                     </div>
                     
-                    {item.discount ? (
-                      <div>
-                        {item.unstichedPrice ? (
+                      {item.discount ? (
+                        <div>
+                          {item.unstichedPrice ? (
                           <>
                             <p className="text-red-500 line-through text-sm">Rs. {item.unstichedPrice} PKR</p>
                             <p className="text-gray-700 font-medium">
@@ -246,20 +246,20 @@ export default function Home() {
                               Rs. {Math.round(item.stichedPrice - (item.stichedPrice * item.discount) / 100)} PKR
                             </p>
                           </>
-                        )}
-                      </div>
-                    ) : (
+                          )}
+                        </div>
+                      ) : (
                       <p className="text-gray-700 font-medium">
                         Rs. {item.unstichedPrice || item.stichedPrice} PKR
-                      </p>
-                    )}
+                            </p>
+                          )}
                   </div>
                 </Link>
               )) : (
                 <div className="col-span-4 text-center py-8">
                   <p className="text-gray-500">New arrivals coming soon...</p>
-                </div>
-              )}
+                        </div>
+                      )}
           </div>
           <div className="text-center mt-10">
             <Link href="/new-arrivals" className="inline-block bg-pink-600 hover:bg-pink-700 text-white py-3 px-8 rounded-md transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px]">
@@ -299,8 +299,8 @@ export default function Home() {
                 <div className="text-center py-8 w-full">
                   <p className="text-gray-500">Collections coming soon...</p>
                 </div>
-              )}
-          </div>
+                      )}
+                    </div>
         </div>
       </section>
 
@@ -341,8 +341,8 @@ export default function Home() {
               <p className="text-gray-600 mb-4 italic">"The customer service is outstanding! When I needed to exchange a size, they made the process so easy. I'll definitely be shopping here again."</p>
               <div className="flex items-center">
                 <div className="font-medium">Fatima R.</div>
-              </div>
-            </div>
+                      </div>
+                    </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-500 transform hover:translate-y-[-5px]">
               <div className="flex items-center mb-4">
@@ -360,7 +360,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+      </div>
       </section>
     </Layout>
   );

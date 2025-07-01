@@ -77,7 +77,7 @@ export default function Product() {
               // Make sure we preserve the available status exactly as it is in the data
               setSelectedProduct({
                 ...product,
-                available: product.available === true, // This ensures false is preserved, not defaulted
+                available: product.available,
                 sizes: product.sizes || ["S", "M", "L", "XL"] // Default sizes if not specified
               });
               setLoading(false);
@@ -309,7 +309,7 @@ export default function Product() {
           
           {/* Stock Status Indicator */}
           <div className="mb-3 mt-2">
-            {selectedProduct.available === true ? (
+            {selectedProduct.available ? (
               <span className="inline-block px-3 py-1 text-sm font-medium bg-green-100 text-green-800 rounded">
                 In Stock
               </span>

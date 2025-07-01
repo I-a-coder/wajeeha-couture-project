@@ -167,7 +167,7 @@ const CartPage = () => {
       
       try {
         // Add order to Firestore
-        const orderRef = await addDoc(collection(db, "orders"), orderData);
+          const orderRef = await addDoc(collection(db, "orders"), orderData);
         console.log("Order created with ID:", orderRef.id);
         
         // If successful, clear cart and redirect
