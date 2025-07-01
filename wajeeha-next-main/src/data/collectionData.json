@@ -148,7 +148,7 @@
           "stichedPrice": 11999,
           "image": "/Kehkasha/0008.jpg",
           "quantity": 3,
-          "available": true
+          "available": false
         },
         {
           "id": "0011",
@@ -159,7 +159,7 @@
           "stichedPrice": 11999,
           "image": "/Kehkasha/0016.jpg",
           "quantity": 3,
-          "available": true
+          "available": false
         },
         {
           "id": "0017",
@@ -170,7 +170,7 @@
           "stichedPrice": 12999,
           "image": "/Kehkasha/0019.jpg",
           "quantity": 3,
-          "available": true
+          "available": false
         }
       ]
     },

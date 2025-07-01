@@ -121,7 +121,7 @@ export default function Collection() {
                     
                     {/* Stock Status Indicator */}
                     <div className="mb-2">
-                      {item.available === true ? (
+                      {item.available ? (
                         <span className="inline-block px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded">
                           In Stock
                         </span>
