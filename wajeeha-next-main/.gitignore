@@ -24,9 +24,13 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pglite-debug.log*
 
 # local env files
+.env
 .env*.local
+.env.development
+.env.production
 
 # vercel
 .vercel
@@ -34,3 +38,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Firebase
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+.firebase/
+
+# IDE
+.idea/
+.vscode/
+
+# Wrangler
+.wrangler/
+
+# OS specific
+Thumbs.db

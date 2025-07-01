@@ -35,13 +35,15 @@ export default function NewArrivals() {
     fetchData();
   }, []);
 
-  // Calculate the current products to display after applying filters
+  // Apply filters function that actually does the filtering
   const applyFilters = () => {
+    if (!data || data.length === 0) return [];
+    
     let filteredProducts = [...data]; // Create a copy of the original data
 
     // Filter by max price
     filteredProducts = filteredProducts.filter(
-      (product) => product.unstichedPrice <= maxPrice
+      (product) => (product.unstichedPrice || product.stichedPrice) <= maxPrice
     );
 
     // Filter by collection
@@ -54,27 +56,45 @@ export default function NewArrivals() {
     // Filter by in-stock status
     if (showInStock) {
       filteredProducts = filteredProducts.filter(
-        (product) => product.available
+        (product) => product.available === true
       );
     }
 
     // Sort products
     if (sortOrder === "lowest") {
-      filteredProducts.sort((a, b) => a.price - b.price);
+      filteredProducts.sort((a, b) => {
+        const priceA = a.unstichedPrice || a.stichedPrice;
+        const priceB = b.unstichedPrice || b.stichedPrice;
+        return priceA - priceB;
+      });
     } else if (sortOrder === "highest") {
-      filteredProducts.sort((a, b) => b.price - a.price);
+      filteredProducts.sort((a, b) => {
+        const priceA = a.unstichedPrice || a.stichedPrice;
+        const priceB = b.unstichedPrice || b.stichedPrice;
+        return priceB - priceA;
+      });
     }
 
     return filteredProducts;
   };
 
-  const filteredProducts = applyFilters(); // Get filtered products
-  const indexOfLastProduct = currentPage * productsPerPage; // Last product index
-  const indexOfFirstProduct = indexOfLastProduct - productsPerPage; // First product index
+  // State for filtered products
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  // Apply filters whenever data changes or filters change
+  useEffect(() => {
+    if (data && data.length > 0) {
+      setFilteredProducts(applyFilters());
+    }
+  }, [data]);
+
+  // Calculate the current products to display from filtered products
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = filteredProducts.slice(
     indexOfFirstProduct,
     indexOfLastProduct
-  ); // Products for the current page
+  );
 
   // Total number of pages
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
@@ -100,7 +120,8 @@ export default function NewArrivals() {
   // Handle filter changes
   const handleApplyFilters = () => {
     setCurrentPage(1); // Reset to first page when applying filters
-    // Other state updates can be handled directly with controlled components
+    // Actually apply the filters and update the state
+    setFilteredProducts(applyFilters());
   };
 
   return (
@@ -196,6 +217,20 @@ export default function NewArrivals() {
                     <h5 className="font-medium text-lg text-pink-600">
                       {item.title}
                     </h5>
+                    
+                    {/* Stock Status Indicator */}
+                    <div className="mb-2">
+                      {item.available === true ? (
+                        <span className="inline-block px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded">
+                          In Stock
+                        </span>
+                      ) : (
+                        <span className="inline-block px-2 py-1 text-xs font-medium bg-red-100 text-red-800 rounded">
+                          Out of Stock
+                        </span>
+                      )}
+                    </div>
+                    
                     {item.discount ? (
                       <div>
                         {/* Original price with strikethrough in red */}
@@ -243,9 +278,6 @@ export default function NewArrivals() {
                           </p>
                         )}
                       </div>
-                    )}
-                    {!item.available && (
-                      <p className="text-red-500 text-sm">Out of Stock</p>
                     )}
                   </div>
                 </div>

@@ -1,27 +1,43 @@
 // src/firebase.js
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApps } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAnalytics, isSupported } from "firebase/analytics";
+import { getAuth, setPersistence, browserLocalPersistence } from "firebase/auth";
+import { getStorage } from "firebase/storage";
 
-// Your Firebase configuration
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBTyZJnZwN-Um6ZpVKXSVZTU4rqt620YNg",
-  authDomain: "wajeeha-couture.firebaseapp.com",
-  projectId: "wajeeha-couture",
-  storageBucket: "wajeeha-couture.appspot.com",
-  messagingSenderId: "219652552888",
-  appId: "1:219652552888:web:dfe66b582cbe7b13729c4d",
-  measurementId: "G-HT5BFZ8TJC",
+  apiKey: "AIzaSyDQNR6i2Ka4nZCC5LPe5hB9X7YY0xATSNU",
+  authDomain: "wajeeha-courture.firebaseapp.com",
+  databaseURL: "https://wajeeha-courture-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "wajeeha-courture",
+  storageBucket: "wajeeha-courture.appspot.com",
+  messagingSenderId: "519618015875",
+  appId: "1:519618015875:web:5adbfa50b51a724224a1b6",
+  measurementId: "G-K11ZY6FPXW"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// Initialize Firebase only once
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApps()[0];
 
 // Initialize Firestore
 const db = getFirestore(app);
 
+// Initialize Authentication
+const auth = getAuth(app);
+
+// Initialize Storage
+const storage = getStorage(app);
+
+// Set persistent auth state
+if (typeof window !== "undefined") {
+  setPersistence(auth, browserLocalPersistence).catch((error) => {
+    console.error("Error setting auth persistence:", error);
+  });
+}
+
 // Initialize Analytics only if supported and in a client environment
-let analytics;
+let analytics = null;
 if (typeof window !== "undefined") {
   isSupported().then((supported) => {
     if (supported) {
@@ -32,4 +48,10 @@ if (typeof window !== "undefined") {
   });
 }
 
-export { db, analytics };
+// Helper functions for working with Firestore
+const serverTimestamp = () => {
+  const { serverTimestamp } = require("firebase/firestore");
+  return serverTimestamp();
+};
+
+export { db, auth, storage, analytics, serverTimestamp };
