@@ -18,7 +18,7 @@ const OrdersPage = () => {
 
   useEffect(() => {
     const fetchOrders = async () => {
-      if (!currentUser) {
+    if (!currentUser) {
         setLoading(false);
         return;
       }
@@ -31,16 +31,16 @@ const OrdersPage = () => {
         await new Promise(resolve => setTimeout(resolve, 1000));
         
         console.log("Fetching orders for user:", currentUser.uid);
-        
+
         const ordersRef = collection(db, "orders");
       
         // Create a query against the collection - without orderBy to avoid index issues
-        const q = query(
+      const q = query(
           ordersRef, 
           where("userId", "==", currentUser.uid)
-        );
+      );
       
-        const querySnapshot = await getDocs(q);
+      const querySnapshot = await getDocs(q);
         
         const ordersList = [];
         querySnapshot.forEach((doc) => {
@@ -56,7 +56,7 @@ const OrdersPage = () => {
           }
           
           ordersList.push({ 
-            id: doc.id,
+        id: doc.id,
             ...data,
             createdAt: createdAt
           });
@@ -66,16 +66,16 @@ const OrdersPage = () => {
         ordersList.sort((a, b) => {
           return new Date(b.createdAt) - new Date(a.createdAt);
         });
-
+      
         console.log("Total orders found:", ordersList.length);
         setOrders(ordersList);
       } catch (error) {
         console.error("Error fetching orders:", error);
         setError("Failed to load your orders. Please try again later.");
-      } finally {
-        setLoading(false);
-      }
-    };
+    } finally {
+      setLoading(false);
+    }
+  };
 
     if (currentUser) {
       fetchOrders();
@@ -216,29 +216,29 @@ const OrdersPage = () => {
               {orders.map((order) => (
                 <div key={order.id} className="bg-white rounded-lg shadow-lg border overflow-hidden">
                   <div className="p-4 bg-gray-50 border-b flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                    <div>
+                      <div>
                       <p className="font-medium">Order #{order.id.slice(0, 8)}</p>
                       <p className="text-sm text-gray-600">
                         Placed on {new Date(order.createdAt).toLocaleDateString()}
                       </p>
-                    </div>
+                      </div>
                     <div className="mt-2 sm:mt-0">
                       <span className="px-3 py-1 rounded-full text-xs capitalize font-medium bg-blue-100 text-blue-800">
                         {order.status || "processing"}
-                      </span>
+                        </span>
                     </div>
                   </div>
                   
                   <div className="p-4">
                     <div className="space-y-3">
-                      {order.items && order.items.map((item, index) => (
+                    {order.items && order.items.map((item, index) => (
                         <div key={index} className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b pb-3 last:border-b-0 last:pb-0">
                           <div className="mb-2 sm:mb-0">
                             <p className="font-medium">{item.title}</p>
                             <p className="text-sm text-gray-600">Qty: {item.quantity}</p>
-                            {item.selectedSize && (
-                              <p className="text-sm text-gray-600">Size: {item.selectedSize}</p>
-                            )}
+                          {item.selectedSize && (
+                            <p className="text-sm text-gray-600">Size: {item.selectedSize}</p>
+                          )}
                           </div>
                           <p className="text-gray-800">
                             Rs. {item.discount
@@ -248,9 +248,9 @@ const OrdersPage = () => {
                               : (item.unstichedPrice || item.stichedPrice)
                             } x {item.quantity}
                           </p>
-                        </div>
-                      ))}
-                    </div>
+                      </div>
+                    ))}
+                  </div>
                   
                     <div className="mt-4 flex flex-col sm:flex-row justify-between border-t pt-3">
                       <div>

@@ -44,6 +44,7 @@ firebase-debug.log
 firestore-debug.log
 ui-debug.log
 .firebase/
+firebase-export-*
 
 # IDE
 .idea/
@@ -54,3 +55,21 @@ ui-debug.log
 
 # OS specific
 Thumbs.db
+.DS_Store
+desktop.ini
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Build artifacts
+dist/
+.turbo/
+
+# Lock files - uncomment if you want to ignore lock files
+# yarn.lock
+# package-lock.json

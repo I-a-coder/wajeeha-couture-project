@@ -34,7 +34,6 @@ export default function Product() {
       try {
         setLoading(true);
         setError(null);
-        console.log(`Fetching product: collection=${collectionParam}, id=${id}`);
         
         // Try to get product directly from Firestore first
         try {
@@ -43,7 +42,6 @@ export default function Product() {
           
           if (productSnap.exists()) {
             const productData = productSnap.data();
-            console.log("Product found in Firestore:", productData);
             
             // Verify this product belongs to the right collection
             if (productData.collection === collectionParam) {
@@ -51,8 +49,6 @@ export default function Product() {
               setLoading(false);
               return;
             }
-          } else {
-            console.log(`Product with ID ${id} not found in Firestore`);
           }
         } catch (firestoreError) {
           console.error("Error fetching from Firestore:", firestoreError);
@@ -60,14 +56,12 @@ export default function Product() {
         
         // If product not found by ID or collection doesn't match, try legacy approach with API
         try {
-          console.log("Trying legacy API...");
           const res = await fetch("/api/allProductApi");
           if (!res.ok) {
             throw new Error(`Failed to fetch data from API: ${res.status}`);
           }
           
           const response = await res.json();
-          console.log("Legacy API response received");
           
           // Find the product by collection and id
           const selectedCollection = response.products.find(
@@ -80,10 +74,10 @@ export default function Product() {
             );
             
             if (product) {
-              console.log("Product found in legacy data:", product);
+              // Make sure we preserve the available status exactly as it is in the data
               setSelectedProduct({
                 ...product,
-                available: product.available !== false, // Default to available if not specified
+                available: product.available,
                 sizes: product.sizes || ["S", "M", "L", "XL"] // Default sizes if not specified
               });
               setLoading(false);
@@ -130,6 +124,12 @@ export default function Product() {
 
   const handleAddToCart = () => {
     if (!selectedProduct) return;
+    
+    // Check if product is available
+    if (!selectedProduct.available) {
+      toast.error("This product is out of stock");
+      return;
+    }
     
     // Check if size is selected (if sizes are available)
     if (selectedProduct.sizes && selectedProduct.sizes.length > 0 && !selectedSize) {
@@ -309,7 +309,7 @@ export default function Product() {
           
           {/* Stock Status Indicator */}
           <div className="mb-3 mt-2">
-            {selectedProduct.available === true ? (
+            {selectedProduct.available ? (
               <span className="inline-block px-3 py-1 text-sm font-medium bg-green-100 text-green-800 rounded">
                 In Stock
               </span>
@@ -413,7 +413,7 @@ export default function Product() {
                           : "border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed"
                     } rounded`}
                     onClick={() => selectedProduct.sizes.includes(size) && handleSizeSelect(size)}
-                    disabled={!selectedProduct.sizes.includes(size)}
+                    disabled={!selectedProduct.sizes.includes(size) || !selectedProduct.available}
                   >
                     {size}
                   </button>
@@ -446,8 +446,13 @@ export default function Product() {
             <div className="flex items-center mb-6">
               <h5 className="text-lg font-bold mr-4">Quantity:</h5>
               <button
-                className="w-8 h-8 border rounded-l flex items-center justify-center hover:bg-gray-100"
+                className={`w-8 h-8 border rounded-l flex items-center justify-center ${
+                  selectedProduct.available 
+                    ? "hover:bg-gray-100" 
+                    : "bg-gray-100 text-gray-400 cursor-not-allowed"
+                }`}
                 onClick={() => handleQuantityChange(-1)}
+                disabled={!selectedProduct.available}
               >
                 -
               </button>
@@ -455,8 +460,13 @@ export default function Product() {
                 {quantity}
               </span>
               <button
-                className="w-8 h-8 border rounded-r flex items-center justify-center hover:bg-gray-100"
+                className={`w-8 h-8 border rounded-r flex items-center justify-center ${
+                  selectedProduct.available 
+                    ? "hover:bg-gray-100" 
+                    : "bg-gray-100 text-gray-400 cursor-not-allowed"
+                }`}
                 onClick={() => handleQuantityChange(1)}
+                disabled={!selectedProduct.available}
               >
                 +
               </button>
