@@ -6,6 +6,7 @@ import { useAuth } from "@/utilities/AuthContext";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import toast from "react-hot-toast";
+import { UserService } from "@/utilities/UserService";
 
 const Profile = () => {
   const { currentUser, logout, uploadProfilePicture } = useAuth();
@@ -13,13 +14,37 @@ const Profile = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [uploadingPicture, setUploadingPicture] = useState(false);
+  const [orderHistory, setOrderHistory] = useState({ recent: [], total: 0 });
+  const [loadingOrders, setLoadingOrders] = useState(false);
   const fileInputRef = useRef(null);
 
   // Redirect if not logged in
   useEffect(() => {
     if (!currentUser) {
       router.push("/login");
+      return;
     }
+
+    // Fetch recent orders if user is logged in
+    const fetchRecentOrders = async () => {
+      try {
+        setLoadingOrders(true);
+        const response = await UserService.getUserOrderHistory(currentUser.uid);
+        if (response.success && response.data) {
+          // Get only the most recent 3 orders
+          setOrderHistory({
+            recent: response.data.slice(0, 3),
+            total: response.data.length
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching recent orders:", error);
+      } finally {
+        setLoadingOrders(false);
+      }
+    };
+
+    fetchRecentOrders();
   }, [currentUser, router]);
 
   const handleLogout = async () => {
@@ -74,6 +99,21 @@ const Profile = () => {
     } finally {
       setUploadingPicture(false);
     }
+  };
+
+  // Format date function
+  const formatDate = (date) => {
+    if (!date) return "N/A";
+    
+    if (typeof date === 'string') {
+      date = new Date(date);
+    }
+    
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    });
   };
 
   if (!currentUser) {
@@ -174,6 +214,11 @@ const Profile = () => {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/profile/addresses" className="text-pink-600 hover:text-pink-800">
+                    Manage Addresses
+                  </Link>
+                </li>
+                <li>
                   <Link href="/change-password" className="text-pink-600 hover:text-pink-800">
                     Change Password
                   </Link>
@@ -188,12 +233,78 @@ const Profile = () => {
           </div>
         </div>
         
+        {/* Recent Orders Section */}
+        <div className="bg-white p-8 rounded-lg shadow-lg border mb-6">
+          <h2 className="text-xl font-semibold mb-4">Recent Orders</h2>
+          
+          {loadingOrders ? (
+            <div className="flex justify-center py-6">
+              <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-pink-600"></div>
+            </div>
+          ) : orderHistory.recent.length > 0 ? (
+            <>
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-2">Order #</th>
+                      <th className="text-left py-2">Date</th>
+                      <th className="text-left py-2">Status</th>
+                      <th className="text-right py-2">Total</th>
+                      <th className="text-right py-2"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {orderHistory.recent.map((order) => (
+                      <tr key={order.id} className="border-b">
+                        <td className="py-3">#{order.id.slice(0, 8)}</td>
+                        <td className="py-3">{formatDate(order.createdAt)}</td>
+                        <td className="py-3 capitalize">{order.status || "pending"}</td>
+                        <td className="py-3 text-right">Rs. {order.total}</td>
+                        <td className="py-3 text-right">
+                          <Link 
+                            href={`/orders/order-detail?id=${order.id}`}
+                            className="text-pink-600 hover:text-pink-800"
+                          >
+                            View
+                          </Link>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              
+              <div className="mt-4 text-right">
+                <Link href="/orders" className="text-pink-600 hover:text-pink-800">
+                  View All Orders ({orderHistory.total})
+                </Link>
+              </div>
+            </>
+          ) : (
+            <div className="py-6 text-center">
+              <p className="text-gray-600 mb-4">You haven't placed any orders yet.</p>
+              <Link href="/collections" className="bg-pink-600 text-white py-2 px-4 rounded-md hover:bg-pink-700 transition-colors inline-block">
+                Start Shopping
+              </Link>
+            </div>
+          )}
+        </div>
+        
+        {/* Shipping Addresses Section */}
         <div className="bg-white p-8 rounded-lg shadow-lg border">
-          <h2 className="text-xl font-semibold mb-4">Order History</h2>
-          <p className="text-gray-600 mb-4">View your complete order history and track your purchases.</p>
-          <Link href="/orders" className="bg-pink-600 text-white py-2 px-4 rounded-md hover:bg-pink-700 transition-colors inline-block">
-            View All Orders
-          </Link>
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-xl font-semibold">Shipping Addresses</h2>
+            <Link href="/profile/addresses" className="text-pink-600 hover:text-pink-800 text-sm">
+              Manage Addresses
+            </Link>
+          </div>
+          <p className="text-gray-600">Manage your shipping addresses for faster checkout.</p>
+          <div className="mt-4">
+            <Link href="/profile/addresses" className="bg-pink-600 text-white py-2 px-4 rounded-md hover:bg-pink-700 transition-colors inline-block">
+              View Addresses
+            </Link>
+          </div>
         </div>
       </div>
     </Layout>

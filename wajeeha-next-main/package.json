@@ -14,8 +14,11 @@
   },
   "dependencies": {
     "firebase": "^10.14.1",
+    "firebase-admin": "^13.4.0",
+    "firebase-functions": "^6.3.2",
     "globally": "^0.0.0",
     "next": "14.2.13",
+    "nodemailer": "^7.0.4",
     "react": "^18",
     "react-dom": "^18",
     "react-hot-toast": "^2.5.2",
