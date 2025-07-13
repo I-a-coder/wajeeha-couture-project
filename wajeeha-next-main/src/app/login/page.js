@@ -21,7 +21,17 @@ const Login = () => {
       setError("");
       setLoading(true);
       await login(email, password);
-      router.push("/"); // Redirect to home page after successful login
+      // Redirect admins to /admin, others to home
+      const adminEmails = [
+        "admin@wajeehacouture.com",
+        "wajeehahashmi1995@gmail.com",
+        "hamnashafeeq10@gmail.com"
+      ];
+      if (adminEmails.includes(email.toLowerCase())) {
+        router.push("/admin");
+      } else {
+        router.push("/");
+      }
     } catch (error) {
       setError("Failed to log in. Please check your credentials.");
       console.error("Login error:", error);

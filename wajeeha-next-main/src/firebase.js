@@ -11,7 +11,7 @@ const firebaseConfig = {
   authDomain: "wajeeha-courture.firebaseapp.com",
   databaseURL: "https://wajeeha-courture-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "wajeeha-courture",
-  storageBucket: "wajeeha-courture.appspot.com",
+  storageBucket: "wajeeha-courture.appspot.com", // <-- FIXED
   messagingSenderId: "519618015875",
   appId: "1:519618015875:web:5adbfa50b51a724224a1b6",
   measurementId: "G-K11ZY6FPXW"

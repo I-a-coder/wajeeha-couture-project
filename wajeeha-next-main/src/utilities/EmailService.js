@@ -1,62 +1,42 @@
-"use client";
+// Email Service for sending notifications
+export const sendOrderNotification = async (orderData, notificationType) => {
+  try {
+    const response = await fetch('/api/email/send-order-notification', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        to: orderData.shippingDetails.email,
+        orderData: orderData,
+        notificationType: notificationType,
+      }),
+    });
 
-import { getFunctions, httpsCallable } from 'firebase/functions';
-import { auth } from '../firebase';
-
-// Initialize Firebase Functions
-const getFirebaseFunctions = () => {
-  return getFunctions();
-};
-
-// Service for email functionality
-export const EmailService = {
-  // Manually send order confirmation email (for admins)
-  sendOrderConfirmationEmail: async (orderId) => {
-    try {
-      // Ensure user is authenticated
-      const user = auth.currentUser;
-      if (!user) {
-        throw new Error('Authentication required');
-      }
-      
-      const functions = getFirebaseFunctions();
-      const manualSendEmail = httpsCallable(functions, 'manualSendEmail');
-      
-      const result = await manualSendEmail({
-        orderId,
-        emailType: 'confirmation'
-      });
-      
-      return result.data;
-    } catch (error) {
-      console.error('Error sending order confirmation email:', error);
-      throw error;
+    if (!response.ok) {
+      throw new Error('Failed to send email notification');
     }
-  },
-  
-  // Manually send order status update email (for admins)
-  sendOrderStatusEmail: async (orderId) => {
-    try {
-      // Ensure user is authenticated
-      const user = auth.currentUser;
-      if (!user) {
-        throw new Error('Authentication required');
-      }
-      
-      const functions = getFirebaseFunctions();
-      const manualSendEmail = httpsCallable(functions, 'manualSendEmail');
-      
-      const result = await manualSendEmail({
-        orderId,
-        emailType: 'status'
-      });
-      
-      return result.data;
-    } catch (error) {
-      console.error('Error sending order status email:', error);
-      throw error;
-    }
+
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error('Error sending email notification:', error);
+    throw error;
   }
 };
 
-export default EmailService; 
+export const sendOrderConfirmation = async (orderData) => {
+  return sendOrderNotification(orderData, 'order_confirmation');
+};
+
+export const sendOrderStatusUpdate = async (orderData) => {
+  return sendOrderNotification(orderData, 'order_status_update');
+};
+
+export const sendOrderShipped = async (orderData) => {
+  return sendOrderNotification(orderData, 'order_shipped');
+};
+
+export const sendOrderDelivered = async (orderData) => {
+  return sendOrderNotification(orderData, 'order_delivered');
+}; 

@@ -1,1 +1,0 @@
-# wajeeha-couture-project

@@ -11,6 +11,7 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import { sendOrderConfirmation } from "@/utilities/EmailService";
 
 const CartPage = () => {
   const { cart, updateQuantity, removeFromCart, clearCart, calculateTotal } = useCart();
@@ -167,8 +168,18 @@ const CartPage = () => {
       
       try {
         // Add order to Firestore
-          const orderRef = await addDoc(collection(db, "orders"), orderData);
+        const orderRef = await addDoc(collection(db, "orders"), orderData);
         console.log("Order created with ID:", orderRef.id);
+        
+        // Send order confirmation email
+        try {
+          const orderWithId = { ...orderData, id: orderRef.id };
+          await sendOrderConfirmation(orderWithId);
+          console.log("Order confirmation email sent successfully");
+        } catch (emailError) {
+          console.error("Failed to send order confirmation email:", emailError);
+          // Don't fail the order if email fails
+        }
         
         // If successful, clear cart and redirect
         clearCart();
