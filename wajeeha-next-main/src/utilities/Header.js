@@ -113,6 +113,11 @@ export default function Header() {
   // Get cart item count
   const cartItemCount = getCartItemCount();
 
+  // Admin check
+  const isAdmin = currentUser?.email === "admin@wajeehacouture.com" ||
+                  currentUser?.email === "wajeehahashmi1995@gmail.com" ||
+                  currentUser?.email === "hamnashafeeq10@gmail.com";
+
   return (
     <>
       {/* Notification Banner */}
@@ -132,7 +137,17 @@ export default function Header() {
       <nav
         className={`bg-white border-gray-200 shadow-lg fixed left-0 right-0 z-50 transition-all duration-500 ease-in-out ${navbarTop}`}
       >
-        <div className="max-w-screen-xl mx-auto p-4">
+        <div className="max-w-screen-xl mx-auto p-4 relative">
+          {/* Admin Portal Button (top right) */}
+          {isAdmin && (
+            <a
+              href="/admin"
+              className="absolute right-4 top-4 bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-5 rounded-full shadow-lg transition-all text-sm z-50 border-2 border-white"
+              style={{ letterSpacing: '0.05em', boxShadow: '0 2px 8px rgba(236,72,153,0.15)' }}
+            >
+              🛡️ Admin Portal
+            </a>
+          )}
           <div className="flex justify-center mb-2">
             <a
               href="/"
