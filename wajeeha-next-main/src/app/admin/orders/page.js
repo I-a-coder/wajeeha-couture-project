@@ -145,7 +145,7 @@ const AdminOrdersPage = () => {
     : orders.filter(order => order.status === filterStatus);
 
   return (
-    <AdminLayout>
+    <div>
       <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
         <h1 className="text-3xl font-bold text-gray-900 mb-6">Orders Management</h1>
         
@@ -362,7 +362,7 @@ const AdminOrdersPage = () => {
           </div>
         </div>
       )}
-    </AdminLayout>
+    </div>
   );
 };
 
