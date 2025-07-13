@@ -7,9 +7,14 @@ service cloud.firestore {
       allow read: if true;
     }
     
-    // Orders - users can read/write their own orders
+    // Orders - users can read/write their own orders, admins can read/write all
     match /orders/{orderId} {
-      allow read, write: if request.auth != null && request.auth.uid == resource.data.userId;
+      allow read, write: if request.auth != null && (
+        request.auth.uid == resource.data.userId || 
+        request.auth.token.email == "admin@wajeehacouture.com" ||
+        request.auth.token.email == "wajeehahashmi1995@gmail.com" ||
+        request.auth.token.email == "hamnashafeeq10@gmail.com"
+      );
       allow create: if request.auth != null && request.auth.uid == request.resource.data.userId;
     }
     
@@ -31,6 +36,15 @@ service cloud.firestore {
     // Accessories - publicly readable
     match /accessories/{accessoryId} {
       allow read: if true;
+    }
+    
+    // Settings - only admins can read/write
+    match /settings/{settingId} {
+      allow read, write: if request.auth != null && (
+        request.auth.token.email == "admin@wajeehacouture.com" ||
+        request.auth.token.email == "wajeehahashmi1995@gmail.com" ||
+        request.auth.token.email == "hamnashafeeq10@gmail.com"
+      );
     }
   }
 } 
